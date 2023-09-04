@@ -1,7 +1,6 @@
-import { toFile, OpenAI } from 'openai'
+import { OpenAI } from 'openai'
 import fs from 'node:fs/promises'
 import path from 'node:path'
-import sharp from 'sharp'
 
 interface DiskImageProps {
     /** the absolute path to the image on disk  */
@@ -20,12 +19,9 @@ interface UrlImageProps {
 export type ImageProps = DiskImageProps | UrlImageProps
 
 /**
- * Generate image variations using the OpenAI API and DALLE. Saves the images to the outputDir.
- * - can pass in either a url or a path to the image. If a url is passed in, the image will be downloaded and saved to the outputDir.
- * @param images - an array of image objects
+ * Base class for image generation and variation
  * @param outputDir - the directory to save the images to. Default is ./images
- * @param saveCropped - whether to save the cropped image to outputDir/cropped. Default is true
- * @param size - the size of the image to generate. Default is 512x512
+ *
  */
 export class OpenAIBase {
     /** The directory to save the images to. */
