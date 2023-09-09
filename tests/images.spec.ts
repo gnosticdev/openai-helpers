@@ -1,6 +1,6 @@
-import { ImageProps } from '../images/base'
-import { ImageVariation } from '../images/variation'
-import { ImageGeneration } from '../images/generation'
+import { ImageProps } from '../src/images/base'
+import { ImageVariation } from '../src/images/variation'
+import { ImageGeneration } from '../src/images/generation'
 import path from 'node:path'
 import fs from 'node:fs'
 
